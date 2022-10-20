@@ -1,0 +1,119 @@
+﻿<Page x:Class="battlerofl.ServersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" Title="ServersPage" Width="1183" Height="752" Background="#C5000000">
+
+    <Grid Background="#9C000000" Height="748">
+        <ListView Height="517" HorizontalAlignment="Left" Margin="12,17,0,0" Name="lsvServers" VerticalAlignment="Top" Width="948" SelectionChanged="lsvServers_SelectionChanged" SelectionMode="Single">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Server Name" DisplayMemberBinding="{Binding Path=ServerName}" Width="425"/>
+                    <GridViewColumn Header="Players" DisplayMemberBinding="{Binding Path=PlayersOnServer}" Width="75"/>
+                    <GridViewColumn Header="Map" DisplayMemberBinding="{Binding Path=MapName}" Width="150"/>
+                    <GridViewColumn Header="Ping" DisplayMemberBinding="{Binding Path=ServerPing}" />
+                    <GridViewColumn Header="Mode" DisplayMemberBinding="{Binding Path=GameType}" Width="125"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="PRESET" Height="28" HorizontalAlignment="Left" Margin="345,547,0,0" Name="lblPreset" VerticalAlignment="Top" FontWeight="SemiBold" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="24,696,0,0" Name="cboRegion" SelectedIndex="0" VerticalAlignment="Top" Width="145">
+            <ComboBoxItem Content="Oceania" />
+            <ComboBoxItem Content="North America" />
+            <ComboBoxItem Content="South America" />
+            <ComboBoxItem Content="Europe" />
+            <ComboBoxItem Content="Africa" />
+            <ComboBoxItem Content="Asia" />
+        </ComboBox>
+        <Label Content="GAME" Height="28" HorizontalAlignment="Left" Margin="21,547,0,0" Name="lblGame" VerticalAlignment="Top" FontWeight="SemiBold" />
+        <CheckBox Content="Battlefield 3" Height="16" HorizontalAlignment="Left" Margin="24,578,0,0" Name="chkBF3" VerticalAlignment="Top" IsChecked="True" Checked="chkBF3_Checked" Unchecked="chkBF3_Unchecked" />
+        <CheckBox Content="Back to Karkand" Height="16" HorizontalAlignment="Left" Margin="24,598,0,0" Name="chkB2K" VerticalAlignment="Top" Unchecked="chkB2K_Unchecked" Checked="chkB2K_Checked" IsChecked="False" />
+        <Button Content="Refresh" Height="23" HorizontalAlignment="Left" Margin="1054,713,0,0" Name="btnRefresh" VerticalAlignment="Top" Width="105" Click="btnRefresh_Click" />
+        <CheckBox Content="Normal" Height="16" HorizontalAlignment="Left" Margin="345,578,0,0" Name="chkNormal" VerticalAlignment="Top" Checked="chkNormal_Checked" Unchecked="chkNormal_Unchecked" />
+        <CheckBox Content="Hardcore" Height="16" HorizontalAlignment="Left" Margin="345,598,0,0" Name="chkHardcore" VerticalAlignment="Top" Checked="chkHardcore_Checked" Unchecked="chkHardcore_Unchecked" />
+        <CheckBox Content="Infantry Only" Height="16" HorizontalAlignment="Left" Margin="345,620,0,0" Name="chkInfantryOnly" VerticalAlignment="Top" Checked="chkInfantryOnly_Checked" Unchecked="chkInfantryOnly_Unchecked" />
+        <Label Content="GAME SIZE" Height="28" HorizontalAlignment="Left" Margin="1083,547,0,0" Name="lblGameSize" VerticalAlignment="Top" FontWeight="SemiBold" />
+        <CheckBox Content="16" Height="16" HorizontalAlignment="Left" Margin="1083,578,0,0" Name="chk16" VerticalAlignment="Top" Checked="chk16_Checked" Unchecked="chk16_Unchecked" />
+        <CheckBox Content="24" Height="16" HorizontalAlignment="Left" Margin="1083,598,0,0" Name="chk24" VerticalAlignment="Top" Checked="chk24_Checked" Unchecked="chk24_Unchecked" />
+        <CheckBox Content="32" Height="16" HorizontalAlignment="Left" Margin="1083,620,0,0" Name="chk32" VerticalAlignment="Top" Checked="chk32_Checked" Unchecked="chk32_Unchecked" />
+        <CheckBox Content="64" Height="16" HorizontalAlignment="Left" Margin="1083,643,0,0" Name="chk64" VerticalAlignment="Top" Checked="chk64_Checked" Unchecked="chk64_Unchecked" />
+        <Label Content="MODE" Height="28" HorizontalAlignment="Left" Margin="-645,132,0,0" Name="lblMode" VerticalAlignment="Top" FontWeight="SemiBold" />
+        <CheckBox Content="Conquest" Height="16" HorizontalAlignment="Left" Margin="918,578,0,0" Name="chkConquest" VerticalAlignment="Top" Checked="chkConquest_Checked" Unchecked="chkConquest_Unchecked" />
+        <CheckBox Content="Conquest (Large)" Height="16" HorizontalAlignment="Left" Margin="918,598,0,0" Name="chkConquestLarge" VerticalAlignment="Top" Checked="chkConquestLarge_Checked" Unchecked="chkConquestLarge_Unchecked" />
+        <CheckBox Content="Rush" Height="16" HorizontalAlignment="Left" Margin="918,622,0,0" Name="chkRush" VerticalAlignment="Top" Checked="chkRush_Checked" Unchecked="chkRush_Unchecked" />
+        <CheckBox Content="Squad DM" Height="16" HorizontalAlignment="Left" Margin="918,643,0,0" Name="chkSquadDeathMatch" VerticalAlignment="Top" Checked="chkSquadDeathMatch_Checked" Unchecked="chkSquadDeathMatch_Unchecked" />
+        <CheckBox Content="Squad Rush" Height="16" HorizontalAlignment="Left" Margin="918,665,0,0" Name="chkSquadRush" VerticalAlignment="Top" Checked="chkSquadRush_Checked" Unchecked="chkSquadRush_Unchecked" />
+        <CheckBox Content="Team Deathmatch" Height="16" HorizontalAlignment="Left" Margin="918,687,0,0" Name="chkTDM" VerticalAlignment="Top" Checked="chkTDM_Checked" Unchecked="chkTDM_Unchecked" />
+        <Label Content="DETAILED" Height="28" HorizontalAlignment="Left" Margin="184,547,0,0" Name="lblDetailed" VerticalAlignment="Top" FontWeight="SemiBold" />
+        <Label Content="FREE SLOTS" Height="28" HorizontalAlignment="Left" Margin="475,547,0,0" Name="lblFreeSlots" VerticalAlignment="Top" FontWeight="SemiBold" />
+        <Label Content="MAPS" Height="28" HorizontalAlignment="Left" Margin="607,547,0,0" Name="lblMaps" VerticalAlignment="Top" FontWeight="SemiBold" />
+        <CheckBox Content="1-5" HorizontalAlignment="Left" Margin="475,578,0,0" Name="chk1to5" Checked="chk1to5_Checked" Unchecked="chk1to5_Unchecked" VerticalAlignment="Top" />
+        <CheckBox Content="6-10" HorizontalAlignment="Left" Margin="476,600,0,0" Name="chk6to10" Checked="chk6to10_Checked" Unchecked="chk6to10_Unchecked" VerticalAlignment="Top" />
+        <CheckBox Content="10+" Height="16" HorizontalAlignment="Left" Margin="476,620,0,0" Name="chk10Plus" VerticalAlignment="Top" Checked="chk10Plus_Checked" Unchecked="chk10Plus_Unchecked" />
+        <CheckBox Content="Empty" Height="16" HorizontalAlignment="Left" Margin="476,643,0,0" Name="chkEmpty" VerticalAlignment="Top" Checked="chkEmpty_Checked" Unchecked="chkEmpty_Unchecked" />
+        <CheckBox Content="Ranked" Height="16" HorizontalAlignment="Left" Margin="184,578,0,0" Name="chkRanked" VerticalAlignment="Top" IsChecked="True" Checked="chkRanked_Checked" Unchecked="chkRanked_Unchecked" />
+        <CheckBox Content="Punkbuster" Height="16" HorizontalAlignment="Left" Margin="184,598,0,0" Name="chkPunkbuster" VerticalAlignment="Top" IsChecked="True" Checked="chkPunkbuster_Checked" Unchecked="chkPunkbuster_Unchecked" />
+        <CheckBox Content="Map Rotation" Height="16" HorizontalAlignment="Left" Margin="184,620,0,0" Name="chkMapRotation" VerticalAlignment="Top" Checked="chkMapRotation_Checked" Unchecked="chkMapRotation_Unchecked" />
+        <CheckBox Content="Gamemode Rotation" Height="16" HorizontalAlignment="Left" Margin="184,643,0,0" Name="chkGameModeRotation" VerticalAlignment="Top" Checked="chkGameModeRotation_Checked" Unchecked="chkGameModeRotation_Unchecked" />
+        <CheckBox Content="Password Protection" Height="16" HorizontalAlignment="Left" Margin="184,665,0,0" Name="chkPasswordProtected" VerticalAlignment="Top" Checked="chkPasswordProtected_Checked" Unchecked="chkPasswordProtected_Unchecked" />
+        <CheckBox Content="Grand Bazaar" HorizontalAlignment="Left" Margin="598,600,0,0" Name="chkGrandBazaar" Checked="chkGrandBazaar_Checked" Unchecked="chkGrandBazaar_Unchecked" Width="103" VerticalAlignment="Top"></CheckBox>
+        <CheckBox Content="Caspian Border" Height="16" HorizontalAlignment="Left" Margin="598,622,0,0" Name="chkCaspian" VerticalAlignment="Top" Checked="chkCaspian_Checked" Unchecked="chkCaspian_Unchecked" />
+        <CheckBox Content="Operation Firestorm" Height="16" HorizontalAlignment="Left" Margin="598,644,0,0" Name="chkFirestorm" VerticalAlignment="Top" Checked="chkFirestorm_Checked" Unchecked="chkFirestorm_Unchecked" />
+        <CheckBox Content="Noshahr Canals" Height="16" HorizontalAlignment="Left" Margin="598,666,0,0" Name="chkNoshahr" VerticalAlignment="Top" Checked="chkNoshahr_Checked" Unchecked="chkNoshahr_Unchecked" />
+        <CheckBox Content="Operation Métro" Height="16" Margin="598,578,0,0" Name="chkOperationMetro" VerticalAlignment="Top" Checked="chkOperationMetro_Checked" Unchecked="chkOperationMetro_Unchecked" HorizontalAlignment="Left" Width="118" IsThreeState="False" />
+        <CheckBox Content="Tehran Highway" Height="16" HorizontalAlignment="Left" Margin="738,600,0,0" Name="chkTehran" VerticalAlignment="Top" Checked="chkTehran_Checked" Unchecked="chkTehran_Unchecked" />
+        <CheckBox Content="Seine Crossing" HorizontalAlignment="Left" Margin="738,622,0,0" Name="chkSeine" Checked="chkSeine_Checked" Unchecked="chkSeine_Unchecked" Height="22" VerticalAlignment="Top" />
+        <CheckBox Content="Damavand Peak" Height="16" HorizontalAlignment="Left" Margin="737,578,0,0" Name="chkDamavand" VerticalAlignment="Top" Checked="chkDamavand_Checked" Unchecked="chkDamavand_Unchecked" />
+        <CheckBox Content="Kharg Island" Height="16" HorizontalAlignment="Left" Margin="598,688,0,0" Name="chkKharg" VerticalAlignment="Top" Checked="chkKharg_Checked" Unchecked="chkKharg_Unchecked" />
+        <CheckBox Content="Strike at Karkand" Height="16" HorizontalAlignment="Left" Margin="738,667,0,0" Name="chkStrike" VerticalAlignment="Top" IsEnabled="False" Checked="chkStrike_Checked" Unchecked="chkStrike_Unchecked" />
+        <CheckBox Content="Gulf of Oman" HorizontalAlignment="Left" Margin="738,645,0,0" Name="chkOman" IsEnabled="False" Checked="chkOman_Checked" Unchecked="chkOman_Unchecked" VerticalAlignment="Top" />
+        <CheckBox Content="Sharqi Peninsula" Height="16" Margin="738,690,0,0" Name="chkSharqi" VerticalAlignment="Top" IsEnabled="False" Checked="chkSharqi_Checked" Unchecked="chkSharqi_Unchecked" HorizontalAlignment="Left" Width="135" />
+        <CheckBox Content="Wake Island" Name="chkWake" IsEnabled="False" Checked="chkWake_Checked" Unchecked="chkWake_Unchecked" HorizontalAlignment="Left" Width="95" Height="21" VerticalAlignment="Top" Margin="598,710,0,0" />
+        <Label Content="FILTER BY NAME" Height="16" HorizontalAlignment="Left" Margin="24,643,0,0" Name="lblServerName" VerticalAlignment="Top" FontWeight="SemiBold" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="24,659,0,0" Name="txtServerName" VerticalAlignment="Top" Width="145" />
+        <Label Content="GAME TYPE" FontWeight="SemiBold" Height="28" HorizontalAlignment="Left" Margin="918,547,0,0" Name="lblGameMode" VerticalAlignment="Top" />
+        <TabControl Height="517" HorizontalAlignment="Left" Margin="965,17,0,0" Name="tcServerInfo" VerticalAlignment="Top" Width="200">
+            <TabItem Header="Information" Name="tiInfo">
+                <Grid>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,8,0,0" Name="lblIPreset" VerticalAlignment="Top" />
+                    <Label Height="17" HorizontalAlignment="Left" Margin="6,27,0,0" Name="lblHud" VerticalAlignment="Top" Width="Auto" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,45,0,0" Name="lblRespawnTime" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,64,0,0" Name="lblBulletDamage" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,82,0,0" Name="lblMinimap" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,100,0,0" Name="lblThirdPersonCam" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,119,0,0" Name="lblVehicles" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,137,0,0" Name="lblRegenHealth" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,156,0,0" Name="lblTeamKillsBeforeKick" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,175,0,0" Name="lblKillcam" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,193,0,0" Name="lblMinimapSpotting" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,211,0,0" Name="lblHealthPercent" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,230,0,0" Name="lblManDownTime" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,249,0,0" Name="lblFriendlyFire" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,269,0,0" Name="lbl3DSpotting" VerticalAlignment="Top" />
+                    <Label Height="16" HorizontalAlignment="Left" Margin="5,288,0,0" Name="lblEnemyNames" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,307,0,0" Name="lblIdleTime" VerticalAlignment="Top" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="5,325,0,0" Name="lblBanAfterKicks" VerticalAlignment="Top" />
+                    <Label Height="28" Margin="5,343,0,0" Name="lblRespawnTimePercent" VerticalAlignment="Top" HorizontalAlignment="Left" Width="0" Content="000" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="5,343,0,0" Name="lblSquadLeaderSpawn" VerticalAlignment="Top" />
+                    <Button Content="Join" Height="23" HorizontalAlignment="Left" Margin="6,466,0,0" Name="btnJoin" VerticalAlignment="Top" Width="188" Click="btnJoin_Click" Visibility="Hidden" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Maps" Name="tiMaps">
+                <ListView Height="480" Name="lsvMaps" Width="183" SelectionMode="Single">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Map" Width="Auto" DisplayMemberBinding="{Binding Path=MapRotation}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="480,698,0,0" Name="txtCount" VerticalAlignment="Top" Width="90" Text="125" />
+        <Label Content="COUNT" FontWeight="SemiBold" Height="23" HorizontalAlignment="Left" Margin="480,681,0,0" Name="lblCount" VerticalAlignment="Top" />
+        <Label Height="21" HorizontalAlignment="Left" Margin="184,710,0,0" Name="lblStatus" VerticalAlignment="Top" FontSize="12" FontWeight="Normal" Width="249" />
+        <CheckBox Content="LAN Support" Height="16" HorizontalAlignment="Left" Margin="184,686,0,0" Name="chkLANSupport" VerticalAlignment="Top" Checked="chkLANSupport_Checked" />
+        <TextBox Height="85" HorizontalAlignment="Left" Margin="270,391,0,0" Name="textBox1" VerticalAlignment="Top" Width="429" />
+    </Grid>
+
+</Page>

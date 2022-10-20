@@ -1,0 +1,8 @@
+﻿<Window x:Class="battlerofl.EventsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EventsWindow" Height="348" Width="702" Closing="Window_Closing">
+    <Grid>
+        <TextBox HorizontalAlignment="Stretch" Name="txtEvents" VerticalAlignment="Stretch" />
+    </Grid>
+</Window>
